@@ -1,0 +1,29 @@
+#### 07/06/2024 - Friday
+===# Working with colors #===========================================================
+
+Colors can be defined in the colors.xml file which is defined by the android OS
+
+===# Working with dimensions #=======================================================
+
+android:layout_width="wrap_content"
+   -> this wraps the button layout around the content
+android:layout_width="match_parent"
+   -> this matches the parent dimension
+
+Other personal dimensions can be defined in ../values/dimens.xml
+    dp = density independent pixel
+    sp = scale independent pixels / text size
+
+Example:
+    <resources>
+        <dimen name="mydimen">300dp</dimen>
+    </resources>
+
+===# Work ease #=====================================================================
+
+To easily add things to /values .xml files, click hint then "Extract string resource"
+    -> To externalizing resource: To maintain them independently
+
+Assignment:
+https://github.com/google-developer-training/android-basics-kotlin-birthday-card-with-image-app-solution
+

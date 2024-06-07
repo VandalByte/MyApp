@@ -5,6 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="#EFEFEF"
     tools:context=".MainActivity">
 
     <TextView
@@ -52,12 +54,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
 
+    <!-- Colors can be defined in the colors.xml file
+         which is defined by the android OS
+
+        android:layout_width="wrap_content"
+           -> this wraps the button layout around the content
+        android:layout_width="match_parent"
+           -> this matches the parent dimension
+    -->
     <Button
         android:id="@+id/button2"
-        android:layout_width="140dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="244dp"
         android:text="Submit"
+        android:textColor="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- dp = density independent pixel
+     sp = scale independent pixels / text size
+-->
+<resources>
+    <dimen name="mydimen">300dp</dimen>
+</resources>
