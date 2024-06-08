@@ -1,9 +1,9 @@
 #### 07/06/2024 - Friday
-===# Working with colors #===========================================================
+===# Working with colors #==========================================================================
 
 Colors can be defined in the colors.xml file which is defined by the android OS
 
-===# Working with dimensions #=======================================================
+===# Working with dimensions #======================================================================
 
 android:layout_width="wrap_content"
    -> this wraps the button layout around the content
@@ -19,7 +19,7 @@ Example:
         <dimen name="mydimen">300dp</dimen>
     </resources>
 
-===# Work ease #=====================================================================
+===# Work ease #====================================================================================
 
 To easily add things to /values .xml files, click hint then "Extract string resource"
     -> To externalizing resource: To maintain them independently
@@ -28,7 +28,7 @@ Assignment:
 https://github.com/google-developer-training/android-basics-kotlin-birthday-card-with-image-app-solution
 
 #### 08/06/2024 - Saturday
-===# Working with logs #===========================================================
+===# Working with logs #============================================================================
 
 In MainActivity.kt ==>
 
@@ -43,9 +43,9 @@ Now use Logcat to view the logs
     Log.d ==> for debug info
     Log.e ==> for error info
 
-===# Playing with multiple activities #===========================================================
+===# Playing with multiple activities #=============================================================
 
-To start the dialer app's dialer activity when pressing a button
+To start the dialer app's dialer activity when pressing a button:
     URI ==> Uniform Resource Identifier : passing data to the activity
 
     fun clickHandler(view: View) {
@@ -54,4 +54,16 @@ To start the dialer app's dialer activity when pressing a button
         startActivity(dialIntent)
     }
 
+To open a website:
+    val webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+
+Documentation:
 Page for other Intents: https://developer.android.com/guide/components/intents-common
+
+===# Making strings with other languages #==========================================================
+
+Goto values folder then create a new resource file, 'strings' and select locale from bottom and
+select your language. It will create a new strings.xml file on different folder, here you can copy
+paste the items from main strings.xml and replace the locale like:
+
+    <string name="app_name">Мое заявление</string>
