@@ -27,3 +27,31 @@ To easily add things to /values .xml files, click hint then "Extract string reso
 Assignment:
 https://github.com/google-developer-training/android-basics-kotlin-birthday-card-with-image-app-solution
 
+#### 08/06/2024 - Saturday
+===# Working with logs #===========================================================
+
+In MainActivity.kt ==>
+
+    fun clickHandler(view: View) {
+        Log.i("button_click", "clickHandler: button clicked")
+    }
+
+In activity_main.xml, add this to the button properties ==>
+    android:onClick="clickHandler"         # clickHandler is the name of the function
+
+Now use Logcat to view the logs
+    Log.d ==> for debug info
+    Log.e ==> for error info
+
+===# Playing with multiple activities #===========================================================
+
+To start the dialer app's dialer activity when pressing a button
+    URI ==> Uniform Resource Identifier : passing data to the activity
+
+    fun clickHandler(view: View) {
+        Log.i("button_click", "clickHandler: button clicked")
+        val dialIntent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:9342345500"))
+        startActivity(dialIntent)
+    }
+
+Page for other Intents: https://developer.android.com/guide/components/intents-common
