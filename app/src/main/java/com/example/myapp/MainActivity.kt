@@ -17,8 +17,11 @@ class MainActivity : AppCompatActivity() {
 
     fun clickHandler(view: View) {
         Log.i("button_click", "clickHandler: button clicked")
-        val dialIntent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:9342345500"))
-        val webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
-        startActivity(webIntent)
+//        val dialIntent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:9342345500"))
+//        val webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+//        startActivity(webIntent)
+
+        val hIndent = Intent(this, HomeActivity::class.java)
+        startActivity(hIndent)
     }
 }
