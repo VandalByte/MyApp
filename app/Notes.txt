@@ -86,7 +86,7 @@ fun tempToday(day:String, temp:String){
 fun double(x:Int):Int = x * 2
 
 #### 11/06/2024 - Tuesday
-===# Working with Lambdas #============================================================================
+===# Working with Lambdas #=========================================================================
 
 // use of lambda
 fun main() {
@@ -100,3 +100,21 @@ fun nullableFunction(): String? {
     return null
 }
 
+If only one param in lambda function you can refer to it as 'it'
+
+val upperCase5: (String) -> String = { it.uppercase() }
+
+===# Working with Higher order function #===========================================================
+     -> function that takes another function as param
+
+fun calculate(x: Int, y: Int, operation: (Int, Int) -> Int): Int {
+    return operation(x, y)
+}
+
+fun sum(x: Int, y: Int) = x + y
+
+fun main() {
+    val sumResult = calculate(4, 5, ::sum)
+    val mulResult = calculate(4, 5) { a, b -> a * b }
+    println("sumResult $sumResult, mulResult $mulResult")
+}
