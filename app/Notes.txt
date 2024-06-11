@@ -67,3 +67,36 @@ select your language. It will create a new strings.xml file on different folder,
 paste the items from main strings.xml and replace the locale like:
 
     <string name="app_name">Мое заявление</string>
+
+#### 10/06/2024 - Monday
+===# Working with OOPs #============================================================================
+
+Class is like a blueprint and object is like a mold of that blueprint.
+
+var - mutable
+val - immutable
+
+===# FUNCTIONS
+
+fun tempToday(day:String, temp:String){
+    println("It's a beautiful $day with temperatures $temp")
+}
+
+// compact function (one-liner for small func)
+fun double(x:Int):Int = x * 2
+
+#### 11/06/2024 - Tuesday
+===# Working with Lambdas #============================================================================
+
+// use of lambda
+fun main() {
+    val multiply: (Int, Int) -> Int = { a, b -> a * b }
+    println(multiply(3, 6))
+}
+
+// func returning null or string
+fun nullableFunction(): String? {
+    // logic
+    return null
+}
+
