@@ -118,3 +118,69 @@ fun main() {
     val mulResult = calculate(4, 5) { a, b -> a * b }
     println("sumResult $sumResult, mulResult $mulResult")
 }
+
+#### 12/06/2024 - Wednesday
+===# Working with Activity life cycles #============================================================
+
+    onCreate() - used to create an sctivity
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(TAG, "Chick started")
+    }
+
+    // (sleep) incoming call ur activity goes into the background for sometime
+    override fun onPause() {
+        super.onPause()
+        Log.i(TAG, "Chick paused")
+    }
+
+    // when activity comes back to foreground
+    override fun onResume() {
+        super.onResume()
+        Log.w(TAG, "Chick resumed")
+    }
+
+    // activity is no longer visible but may still be in memory
+    override fun onStop() {
+        super.onStop()
+        Log.w(TAG, "Chick stopped")
+    }
+
+    // activity is being removed from memory and is about to be terminated
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.v(TAG,"activity is destroyed")
+    }
+
+
+===# Adding activity UI without using XML #======================================================
+
+Jetpack Compose - writing UI with code
+
+To add UI element via code without using XML, now call this function in onCreate()
+
+    fun inflateXml(){
+        var nameEditText = EditText(this)
+        nameEditText.setHint("enter ur name")
+        var pwdEditText = EditText(this)
+        pwdEditText.setHint("enter ur pass")
+        var loginButton = Button(this)
+        loginButton.setText("login")
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
