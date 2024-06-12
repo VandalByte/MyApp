@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 //        startActivity(webIntent)
 
         val hIndent = Intent(this, HomeActivity::class.java)
+        throw NullPointerException("THOWSS THE ERROR!!!")
         startActivity(hIndent)
     }
 
