@@ -170,7 +170,12 @@ To add UI element via code without using XML, now call this function in onCreate
     }
 
 
+#### 13/06/2024 - Thursday
+===# Test driven development #======================================================================
 
+main - contains main code
+test - contains test code run in local machine
+androidTest - code that runs in emulator
 
 
 

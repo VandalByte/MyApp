@@ -14,7 +14,9 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
     }
+    
     val TAG = "CHICK"
+
     fun clickHandler(view: View) {
         Log.i("button_click", "clickHandler: button clicked")
 //        val dialIntent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:9342345500"))
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 //        startActivity(webIntent)
 
         val hIndent = Intent(this, HomeActivity::class.java)
-        throw NullPointerException("THOWSS THE ERROR!!!")
+//        throw NullPointerException("THOWSS THE ERROR!!!")
         startActivity(hIndent)
     }
 
