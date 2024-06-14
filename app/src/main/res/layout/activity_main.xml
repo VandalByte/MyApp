@@ -10,32 +10,32 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="148dp"
-        android:layout_height="37dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="107dp"
         android:text="My App"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextText5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="51dp"
-        android:layout_marginTop="216dp"
         android:layout_marginEnd="51dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="64dp"
         android:ems="10"
         android:hint="Enter Username"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -64,12 +64,23 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="244dp"
-        android:text="Submit"
+        android:layout_marginBottom="55dp"
         android:onClick="clickHandler"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Submit"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:entries="@array/languages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

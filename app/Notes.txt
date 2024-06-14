@@ -177,9 +177,22 @@ main - contains main code
 test - contains test code run in local machine
 androidTest - code that runs in emulator
 
+### 14/06/2024 - Friday
+===# Making an activity a launcher #================================================================
 
+In AndroidManifest.xml paste it under the activity you want to make the launcher
 
+<intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
 
+Problem with ListView --> too much data, so we use recycler-view
+
+Stuff we need for Recycler-View:
+    data, RecyclerView, adapter
+
+    data ---> adapter --->
 
 
 
