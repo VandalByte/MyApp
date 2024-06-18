@@ -1,15 +1,16 @@
 package com.example.myapp.stuff
 
-
-
-fun tempToday(day:String, temp:String){
-    println("It's a beautiful $day with temperatures $temp")
+data class Person(var name: String, var age: Int, var about: String) {
+    constructor() : this("", 0, "")
 }
 
-// compact function
-fun double(x:Int):Int = x * 2
+fun writeCreationLog(p: Person) {
+    println("A new person ${p.name} was created.")
+}
 
-fun String.commaSep(value: String):String{
-    val newStr = value.replace(" ", ",")
-    return newStr
+fun main() {
+    val jake = Person("Jake", 30, "Android developer")   // 1
+        .also {                                          // 2
+            writeCreationLog(it)                         // 3
+        }
 }

@@ -194,11 +194,37 @@ Stuff we need for Recycler-View:
 
     data ---> adapter --->
 
+### 15/06/2024 - Saturday
+===# Scope functions #==============================================================================
+
+with  - access members without specifying
+let   - executes a code block and returns result, obj accessed by 'it'
+run   - executes a code block and returns result, obj accessed by 'this'
+apply - executes a block of code on an object and returns the object itself, obj accessed by 'this'
+also  - executes a given block and returns the object called. Inside the block, the object is referenced by 'it'
+        so it's easier to pass it as an argument. This function is handy for embedding additional actions, such
+        as logging in call chains.
 
 
+### 18/06/2024 - Tuesday
+===# Suspend functions #==============================================================================
 
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 
+// Define a suspend function that delays for a specified time
+suspend fun doSomeWork() {
+    println("Starting work...")
+    delay(1000) // Simulate some asynchronous work (e.g., network call, file I/O)
+    println("Work complete!")
+}
 
+fun main() = runBlocking {
+    println("Before calling suspend function")
 
+    // Call the suspend function within a coroutine scope
+    doSomeWork()
 
+    println("After calling suspend function")
+}
 
