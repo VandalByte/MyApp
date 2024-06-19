@@ -1,31 +1,51 @@
 package com.example.myapp
-
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.AdapterView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.myapp.network.MarsApi
+import com.example.myapp.network.MarsApiService
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
-    var dataArray = arrayOf("india","hindi","australia","peacock","blue")
-    lateinit var myRecycler: RecyclerView
+class HomeActivity : AppCompatActivity(){
+    var TAG = HomeActivity::class.java.simpleName    //"HomeActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.row_layout_item)
-        myRecycler = findViewById(R.id.recyclerView)
-        myRecycler.layoutManager = LinearLayoutManager(this)
-        var wordsAdapter = WordsAdapter(dataArray)
-        myRecycler.adapter = wordsAdapter
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+
     }
 
-    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        TODO("Not yet implemented")
+
+    private fun getMarsPhotos() {
+        GlobalScope.launch {
+
+            var jsonString =   MarsApi.retrofitService.getPhotos()
+            var listMarsPhotos =   MarsApi.retrofitService.getPhotos()
+//            var tvHome: TextView = findViewById(R.id.tvHome)
+//            tvHome.setText(listMarsPhotos.get(1).imgSrc)
+            Log.i("MARS_DATA",listMarsPhotos.size.toString())
+        }
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>?) {
-        TODO("Not yet implemented")
+    fun getJson(view: View) {
+        getMarsPhotos()
     }
+
 }

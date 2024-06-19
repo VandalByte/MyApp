@@ -207,7 +207,7 @@ also  - executes a given block and returns the object called. Inside the block, 
 
 
 ### 18/06/2024 - Tuesday
-===# Suspend functions #==============================================================================
+===# Suspend functions #============================================================================
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -228,3 +228,7 @@ fun main() = runBlocking {
     println("After calling suspend function")
 }
 
+### 19/06/2024 - Wednesday
+===# Suspend functions #============================================================================
+lazy  - only create object when called upon
+eager -
