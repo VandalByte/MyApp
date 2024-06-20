@@ -48,7 +48,6 @@ class HomeActivity : AppCompatActivity(){
         GlobalScope.launch(Dispatchers.Main) {
             //launching coroutines on the main thread is not advisable
             var listMarsPhotos =   MarsApi.retrofitService.getPhotos()
-            photos = listMarsPhotos
             // photos = listMarsPhotos
             marsAdapter.listMarsPhotos = listMarsPhotos
             marsAdapter.notifyDataSetChanged()
