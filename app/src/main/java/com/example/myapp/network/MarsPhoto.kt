@@ -1,6 +1,5 @@
 package com.example.myapp.network
 
-
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
