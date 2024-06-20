@@ -1,6 +1,4 @@
 package com.example.myapp
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,7 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapp.network.MarsPhoto
 import kotlinx.coroutines.Dispatchers
-import okhttp3.Dispatcher
+import android.widget.ImageView
+import coil.load
 
 class HomeActivity : AppCompatActivity(){
     var TAG = HomeActivity::class.java.simpleName    //"HomeActivity"
@@ -23,11 +22,13 @@ class HomeActivity : AppCompatActivity(){
     lateinit var marsRecyclerView:RecyclerView
     lateinit var marsAdapter: MarsAdapter
     lateinit var photos:List<MarsPhoto>
+    lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
+        imageView = findViewById(R.id.imageView)
         marsRecyclerView = findViewById(R.id.recyclerViewUrls)
         marsRecyclerView.layoutManager = LinearLayoutManager(this)
         photos = ArrayList()
@@ -50,6 +51,8 @@ class HomeActivity : AppCompatActivity(){
             var listMarsPhotos =   MarsApi.retrofitService.getPhotos()
             // photos = listMarsPhotos
             marsAdapter.listMarsPhotos = listMarsPhotos
+            //import coil.load
+            imageView.load(listMarsPhotos.get(0).imgSrc)
             marsAdapter.notifyDataSetChanged()
 //            var tvHome:TextView = findViewById(R.id.tvHome)
 //            tvHome.setText(listMarsPhotos.get(1).imgSrc)
