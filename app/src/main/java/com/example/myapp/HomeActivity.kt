@@ -16,6 +16,8 @@ import kotlinx.coroutines.Dispatchers
 import android.widget.ImageView
 import com.example.myapp.databinding.ActivityHomeBinding
 import coil.load
+import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 
 class HomeActivity : AppCompatActivity(){
     var TAG = HomeActivity::class.java.simpleName    //"HomeActivity"
@@ -25,6 +27,7 @@ class HomeActivity : AppCompatActivity(){
     lateinit var photos:List<MarsPhoto>
 //    lateinit var imageView: ImageView
     private lateinit var binding: ActivityHomeBinding
+    val photoMarsDatabinding = MarsPhoto("007","moonimage.com")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +37,10 @@ class HomeActivity : AppCompatActivity(){
 //        marsRecyclerView = findViewById(R.id.recyclerViewUrls)
 //        marsRecyclerView.layoutManager = LinearLayoutManager(this)
         // setContentView(R.layout.activity_home)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        val binding: ActivityHomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+        /* var homeTextView:TextView = findViewById(R.id.tvHome)
+         homeTextView.setText(photoMarsDatabinding.imgSrc)*/
+        binding.marsphotoxml = photoMarsDatabinding
 
         // imageView = findViewById(R.id.imageView)
         // marsRecyclerView = findViewById(R.id.recyclerViewUrls)
