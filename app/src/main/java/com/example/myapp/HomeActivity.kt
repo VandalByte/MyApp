@@ -14,35 +14,43 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapp.network.MarsPhoto
 import kotlinx.coroutines.Dispatchers
 import android.widget.ImageView
+import com.example.myapp.databinding.ActivityHomeBinding
 import coil.load
 
 class HomeActivity : AppCompatActivity(){
     var TAG = HomeActivity::class.java.simpleName    //"HomeActivity"
 
-    lateinit var marsRecyclerView:RecyclerView
+//    lateinit var marsRecyclerView:RecyclerView
     lateinit var marsAdapter: MarsAdapter
     lateinit var photos:List<MarsPhoto>
-    lateinit var imageView: ImageView
+//    lateinit var imageView: ImageView
+    private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_home)
-        imageView = findViewById(R.id.imageView)
-        marsRecyclerView = findViewById(R.id.recyclerViewUrls)
-        marsRecyclerView.layoutManager = LinearLayoutManager(this)
+//        setContentView(R.layout.activity_home)
+//        imageView = findViewById(R.id.imageView)
+//        marsRecyclerView = findViewById(R.id.recyclerViewUrls)
+//        marsRecyclerView.layoutManager = LinearLayoutManager(this)
+        // setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        // imageView = findViewById(R.id.imageView)
+        // marsRecyclerView = findViewById(R.id.recyclerViewUrls)
+        binding.recyclerViewUrls.layoutManager = LinearLayoutManager(this)
         photos = ArrayList()
         marsAdapter = MarsAdapter(photos)
-        marsRecyclerView.adapter = marsAdapter
-
+//        marsRecyclerView.adapter = marsAdapter
+        binding.recyclerViewUrls.adapter = marsAdapter
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-
     }
 
     private fun getMarsPhotos() {
