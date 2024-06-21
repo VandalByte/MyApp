@@ -232,3 +232,8 @@ fun main() = runBlocking {
 ===# Suspend functions #============================================================================
 lazy  - only create object when called upon
 eager -
+
+
+I want to make a weather activity in android using android studio and kotlin with gradle, I want to put the data fetched from openweathermap and put them in a page, so like I have an input box when I type in the city name it will fetch most important data and display it, My main package path is com.example.myapp; try putting all the needed files in com.example.myapp.weather except the WeatherActivity.kt which is the activity file, it should be in com.example.myapp
+
+Tell me how to do this in android studio step by step, along with the files to create and where to put the code
