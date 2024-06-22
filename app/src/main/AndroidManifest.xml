@@ -28,6 +28,9 @@
         <activity
             android:name=".WeatherActivity"
             android:exported="false" />
+        <activity
+            android:name=".DBActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 //        val webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
 //        startActivity(webIntent)
 
-        val hIndent = Intent(this, WeatherActivity::class.java)
+        val hIndent = Intent(this, DBActivity::class.java)
 //        throw NullPointerException("THOWSS THE ERROR!!!")
         startActivity(hIndent)
     }
