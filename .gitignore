@@ -14,4 +14,4 @@
 .cxx
 local.properties
 Secrets.kt
-/app/src/main/java/com/example/myapp/Secrets.kt
+app/src/main/java/com/example/myapp/Secrets.kt
