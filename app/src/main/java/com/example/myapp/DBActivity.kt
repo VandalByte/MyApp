@@ -21,8 +21,6 @@ class DBActivity : AppCompatActivity() {
     lateinit var dao: ItemDao
     lateinit var viewModel: DBViewModel
 
-    var count = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,7 +32,7 @@ class DBActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[DBViewModel::class.java]
 
-        binding.tvHome.setText("" + count)
+        binding.tvHome.setText("" + viewModel.count)
 
         binding.btnDbInsert.setOnClickListener{
             insertDataDb()
@@ -43,10 +41,8 @@ class DBActivity : AppCompatActivity() {
             findItemDb(21)
         }
         binding.btnInc.setOnClickListener{
-            count++
-            //viewModel.incrementCount()
-            binding.tvHome.setText("" + count)
-            //+viewModel.count)
+            viewModel.incrementCount()
+            binding.tvHome.setText("" + viewModel.count)
         }
     }
     fun add(a:Int,b:Int):Int{
